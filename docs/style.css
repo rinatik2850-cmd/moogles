@@ -1,0 +1,198 @@
+/* 1. Global Reset, Body & Font (Windows 11 inspired) */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* Windows 11 font or a good alternative */
+    font-family: 'Segoe UI Variable Display', 'Segoe UI', Helvetica, Arial, sans-serif;
+    color: #262626; /* Dark text for light theme */
+}
+
+body {
+    background-color: #f3f3f3; /* Lighter background than default Insta */
+    display: flex; /* Use flexbox for centering content */
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    min-height: 100vh; /* Full viewport height */
+}
+
+/* Accent color variable */
+:root {
+    --win11-accent: #0078d4; /* Default Windows 11 blue */
+    --win11-bg-light: #ffffff;
+    --win11-border: #e0e0e0;
+    --win11-shadow: rgba(0, 0, 0, 0.08); /* Subtle shadow */
+}
+
+/* 2. Navbar - Centered, Rounded, with light shadow (Windows 11 inspired) */
+.navbar {
+    display: flex;
+    justify-content: center; /* Center items for a Windows 11 feel */
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--win11-bg-light);
+    border-bottom: 1px solid var(--win11-border);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: 54px;
+    box-shadow: 0 2px 8px var(--win11-shadow); /* Subtle shadow */
+}
+
+.navbar .logo {
+    font-family: 'Segoe UI Variable Display', 'Segoe UI', sans-serif; /* Keep consistency */
+    font-size: 24px; /* Slightly smaller for balance */
+    font-weight: 700; /* Bold */
+    color: var(--win11-accent); /* Accent color for logo */
+    margin-right: 40px; /* Space for search */
+}
+
+.navbar input[type="text"] {
+    padding: 8px 12px;
+    border: 1px solid var(--win11-border);
+    border-radius: 8px; /* Rounded corners */
+    background-color: #f9f9f9;
+    width: 250px; /* Wider search */
+    font-size: 14px;
+    outline: none; /* Remove default outline */
+    transition: all 0.2s ease-in-out;
+}
+
+.navbar input[type="text"]:focus {
+    border-color: var(--win11-accent);
+    box-shadow: 0 0 0 2px rgba(0, 120, 212, 0.2); /* Focus glow */
+    background-color: var(--win11-bg-light);
+}
+
+.navbar nav {
+    margin-left: 40px; /* Space from search */
+}
+
+.navbar nav a {
+    color: #616161; /* Softer icon color */
+    text-decoration: none;
+    margin: 0 15px; /* Spaced out */
+    font-size: 20px; /* Slightly smaller icons */
+    transition: color 0.2s ease-in-out;
+}
+
+.navbar nav a:hover {
+    color: var(--win11-accent); /* Accent on hover */
+}
+
+
+/* 3. Main Feed Container - Centralized content area */
+.feed-container {
+    max-width: 630px;
+    width: 100%; /* Ensure it takes full width up to max-width */
+    margin: 74px auto 0; /* Adjust margin for fixed header */
+    padding: 20px; /* Add some padding around the container */
+}
+
+/* 4. Individual Post Styles - Rounded, Elevated (Windows 11 inspired) */
+.post {
+    background-color: var(--win11-bg-light);
+    border: 1px solid var(--win11-border); /* Softer border */
+    margin-bottom: 25px;
+    border-radius: 8px; /* Prominent rounded corners */
+    box-shadow: 0 4px 12px var(--win11-shadow); /* More pronounced shadow for elevation */
+    overflow: hidden; /* Ensure rounded corners clip content */
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--win11-border); /* Separator */
+}
+
+.profile-pic {
+    width: 38px; /* Slightly larger */
+    height: 38px;
+    border-radius: 50%;
+    margin-right: 12px;
+    object-fit: cover;
+    border: 2px solid var(--win11-accent); /* Accent border on profile pic */
+}
+
+.username {
+    font-weight: 600;
+    font-size: 15px; /* Slightly larger */
+    color: #262626;
+    text-decoration: none;
+}
+
+.post-image {
+    width: 100%;
+    display: block;
+    background-color: #e0e0e0; /* Placeholder background */
+}
+
+/* 5. Post Actions (Buttons) - Modern, slightly larger */
+.post-actions {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--win11-border);
+}
+
+.post-actions button {
+    background: none;
+    border: none;
+    font-size: 22px; /* Slightly smaller for balance */
+    cursor: pointer;
+    margin-right: 15px;
+    color: #616161; /* Softer color */
+    transition: color 0.2s ease-in-out;
+}
+
+.post-actions button:hover {
+    color: var(--win11-accent);
+}
+
+.post-actions button:focus {
+    outline: none;
+}
+
+/* 6. Post Information (Likes, Caption, Comments) */
+.post-info {
+    padding: 10px 16px 16px;
+    font-size: 14px;
+    line-height: 1.4; /* Better readability */
+}
+
+.likes-count {
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #262626;
+}
+
+.caption {
+    margin-bottom: 6px;
+}
+
+.caption .username {
+    margin-right: 5px;
+    font-weight: 600;
+}
+
+.view-comments {
+    color: #8e8e8e;
+    text-decoration: none;
+    display: block;
+    margin-top: 8px;
+    font-size: 13px; /* Slightly smaller */
+}
+
+.view-comments:hover {
+    text-decoration: underline;
+}
+
+/* 7. Footer Styles - Simple and centered */
+.footer {
+    text-align: center;
+    padding: 30px 0;
+    color: #8e8e8e;
+    font-size: 13px;
+    margin-top: auto; /* Push footer to the bottom */
+}
